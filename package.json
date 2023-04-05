@@ -1,12 +1,12 @@
 {
     "name": "typescript-rcon",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "A simple Minecraft RCON client written in TypeScript",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
         "build": "tsc",
-        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "format": "prettier --write \"src/**/*.ts\"",
         "lint": "tslint -p tsconfig.json",
         "test": "jest --config jestconfig.json",
         "prepare": "npm run build",

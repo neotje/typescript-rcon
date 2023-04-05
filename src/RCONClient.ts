@@ -58,8 +58,6 @@ export default class RCONClient {
       return (data: Buffer) => {
         const packet = new RCONPacket(data);
 
-        console.log(packet.toString());
-
         if (packet.type === RCONPacketType.RESPONSE && packet.requestId === cmdPacket.requestId) {
           result += packet.payload;
           return;
@@ -79,9 +77,9 @@ export default class RCONClient {
       this.socket.once('error', reject).on('data', onData).write(cmdPacket.buffer);
 
       this.socket.write(endPacket.buffer);
-    }).then((result) => {
+    }).then((response) => {
       this.socket.off('data', onData);
-      return result;
+      return response;
     });
   }
 }
