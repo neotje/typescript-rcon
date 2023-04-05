@@ -1,16 +1,22 @@
 {
     "name": "typescript-rcon",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "A simple Minecraft RCON client written in TypeScript",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "scripts": {
         "build": "tsc",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
         "lint": "tslint -p tsconfig.json",
-        "test": "jest --config jestconfig.json"
+        "test": "jest --config jestconfig.json",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run lint && npm run test && npm run format",
+        "preversion": "npm run lint && npm run test",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": ["rcon", "minecraft", "typescript"],
+    "author": "neotje",
     "license": "ISC",
     "devDependencies": {
         "@types/jest": "^29.5.0",
