@@ -17,7 +17,7 @@
     },
     "keywords": ["rcon", "minecraft", "typescript"],
     "author": "neotje",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@types/jest": "^29.5.0",
         "jest": "^29.5.0",
